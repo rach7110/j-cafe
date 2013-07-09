@@ -36,13 +36,14 @@ $(document).ready(function() {
       $('select').length
     );
 
+    // Change the tax calculations
+    $('#taxes').load('/taxes', $('form').serialize());
+
     generate_blank_drink_order();
 
     $('#cost').text(
       calculate_total_cost_of_all_drinks()
     );
-
-    $('#taxes').load('/taxes', $('form').serialize());
   });
 
 
