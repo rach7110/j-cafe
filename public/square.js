@@ -41,6 +41,8 @@ $(document).ready(function() {
     $('#cost').text(
       calculate_total_cost_of_all_drinks()
     );
+
+    $('#taxes').load('/taxes', $('form').serialize());
   });
 
 
