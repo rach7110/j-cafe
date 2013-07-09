@@ -15,3 +15,10 @@ post '/shop' do
   'Thanks for your order'
 end
 
+post '/signup' do
+  puts "\n" * 3
+  puts "Received email: #{params[:email]}"
+  puts "\n" * 3
+
+  "Thanks for signing up!"
+end
