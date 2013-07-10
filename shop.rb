@@ -8,7 +8,8 @@ end
 
 get '/taxes' do
   # how many drinks * 100 cents
-  Array(params[:drink]).length * 100
+  puts Array(params[:drink]).length.inspect
+  (Array(params[:drink]).length * 100).to_s
 end
 
 post '/shop' do
