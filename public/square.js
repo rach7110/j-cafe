@@ -4,7 +4,7 @@ function calculate_total_cost_of_all_drinks() {
   // Only grab selected options that have a
   // 'data-price' attribute set
   // (ignores 'Please select a drink') options
-  $('option:selected:has([data-price])').each(function(){
+  $('option:selected[data-price]').each(function(){
     total_cost += Number(
       $(this).attr('data-price')
     )
