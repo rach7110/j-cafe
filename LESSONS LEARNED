@@ -1,0 +1,14 @@
+Lessons Learned:
+*******************************************************************************
+Heroku Deployment - Sinatra app:
+
+	Need to inculde Sinatra in the config.ru ('Rack up') file - see Heroku article:
+	https://devcenter.heroku.com/articles/rack
+
+	"To run a Rack-based app, include a Gemfile, as well as a rackup file named config.ru in the app’s root directory. The config.ru file convention has become common, so most existing Rack applications should not require changes to deploy to Heroku."
+
+	config.ru:
+		require './hello'
+		run Sinatra::Application
+
+*******************************************************************************
