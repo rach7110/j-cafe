@@ -1,33 +1,18 @@
 body {
-  background: #38291f; /* Old browsers */
-  background: -moz-linear-gradient(left,  #38291f 0, #3d2f24 2%, #3d2f24 50%, #38291f 50%, #3d2f24 52%, #453428 52%, #453428 100%); /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0,#38291f), color-stop(2%,#3d2f24), color-stop(50%,#3d2f24), color-stop(50%,#38291f), color-stop(52%,#3d2f24), color-stop(52%,#453428), color-stop(100%,#453428)); /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left,  #38291f 0,#3d2f24 2%,#3d2f24 50%,#38291f 50%,#3d2f24 52%,#453428 52%,#453428 100%); /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left,  #38291f 0,#3d2f24 2%,#3d2f24 50%,#38291f 50%,#3d2f24 52%,#453428 52%,#453428 100%); /* Opera 11.10+ */
-  background: -ms-linear-gradient(left,  #38291f 0,#3d2f24 2%,#3d2f24 50%,#38291f 50%,#3d2f24 52%,#453428 52%,#453428 100%); /* IE10+ */
-  background: linear-gradient(to right,  #38291f 0,#3d2f24 2%,#3d2f24 50%,#38291f 50%,#3d2f24 52%,#453428 52%,#453428 100%); /* W3C */
-  background-size: 10%;
-
-
-  /*
-    This is all of the above properties in one line, a shorthand version:
-
-    background: #EFEFEF url('overview.jpg') no-repeat fixed center center;
-  */
-
+  background-image: url('old_map.png');
   font-family: "Bubblegum Sans", cursive;
   font-size: 100%;                        /* Reset the default font size to about 16 pixels */
 }
 
 #headmast {
-  background: rgba(0, 0, 0, 0.4);
+  background: #0A7B83;
+  opacity: 0.5;
   border-radius: 4px; /* Slightly curved borders */
   color: #fff;
   margin: 3em auto; /* Align to the center */
   padding: 0.5em 1.5em;
   width: 60em;
 }
-
 
 h1 {
   font-size: 3em;
@@ -38,7 +23,6 @@ h1 {
 h1, p {
   text-shadow: #333 3px 3px 3px;
 }
-
 
 dl {
   border-top: solid #FFF 1px;
@@ -68,7 +52,8 @@ dt {
   }
 
   .panel {
-    background: rgba(0, 0, 0, 0.7);
+    background: #CE4D45;
+    opacity: 0.7; 
     float: left;
     margin: 0 5em 1.5em 0;
     padding: 1em;
@@ -106,7 +91,7 @@ dt {
   }
 
   #footer {
-    color: #FFF;
+    color: #0A7B83;
     margin: auto;
     padding: 1.5em;
     width: 60em;
