@@ -12,12 +12,15 @@ $(document).ready(function() {
       $('form').append('<div>' + newdropdown + '</div>');
 
       //Updating the order qty: 
-      var x=0;
-      x+=1;
-      $('dd#drinks').text(x);
+      var drinks=0;
+      drinks+=1;
+      $('dd#drinks').text(drinks);
 
       // Another way to update the order quantity (w/o setting a var):
       // $('dd#drinks').text($('select').length - 1);
+
+      // // Tax calculation:
+      // $('#taxes').load('/taxes', $('form').serialize());
 
       //Update the total cost:
       var totalcost=0;
@@ -27,16 +30,16 @@ $(document).ready(function() {
           totalcost +=$(this.options[this.selectedIndex]).data('price')
         }
         $('#cost').text('$' + (totalcost/100).toFixed(2));
+        cost = {cost: totalcost}
       });
+
       // Adding a 'Submit' button:
-      cost = {cost: totalcost}
       $('.button').click(function(event){
         event.preventDefault(); //cancels default action/event (otherwise, browser jumps to the page before code appears)
         $('#submit_btn').hide();
         $.post('/shop', cost, function(responseText){
-          responseText="Thanks! Your order will be ready in 10 minutes."
-          $('.response').append(responseText);
-        });
+          $('.response').html('<h2>' + responseText + '</h2>')
       });
-    }); 
+    });
+  });
 });
