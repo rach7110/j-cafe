@@ -1,3 +1,5 @@
+// alert("This is a test");
+
 $(document).ready(function() {
   // grab the 'select' elements' container,'form' will do nicely
   $('form').
@@ -6,7 +8,7 @@ $(document).ready(function() {
     // the element we are watching on ('select'), and
     // the function to call when the element changes - an anonymous function, here
     on('change', 'select', function(){
-      var newdropdown=$('form').find('div').first().html(); //grabbing all the <options> and <optgroup> from the first <select> tag. 
+      var newdropdown=$('form').find('div').first().html(); //grabbing the first <div> tag from the <form>. Includes the <select> tag with all its <options> and <optgroup>.  
       $('form').append('<div>' + newdropdown + '</div>');
 
       //Updating the order qty: 
@@ -26,15 +28,15 @@ $(document).ready(function() {
         }
         $('#cost').text('$' + (totalcost/100).toFixed(2));
       });
+      // Adding a 'Submit' button:
+      cost = {cost: totalcost}
+      $('.button').click(function(event){
+        event.preventDefault(); //cancels default action/event (otherwise, browser jumps to the page before code appears)
+        $('#submit_btn').hide();
+        $.post('/shop', cost, function(responseText){
+          responseText="Thanks! Your order will be ready in 10 minutes."
+          $('.response').append(responseText);
+        });
+      });
     }); 
-
-  // Adding a 'Submit' button:
-  // cost = {cost: totalcost}
-  // $('.button').click(function(event){
-  //   event.preventDefault();
-  //   $.post('/shop', cost, function(responseText){
-  //     $('.response').append(responseText);
-  //   });
-   // }); 
-
 });

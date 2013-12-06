@@ -12,3 +12,27 @@ Heroku Deployment - Sinatra app:
 		run Sinatra::Application
 
 *******************************************************************************
+Sinatra - Public Folder:
+	Sinatra expects static files to be placed int he public forlder. ie: somefile.css
+	This is not intuitive since they are referenced like they are in the top level directory:
+		<!-- suspicious lack of "public/somefile.css" -->
+		<link rel="stylesheet" type="text/css" href="somefile.css" />
+*******************************************************************************
+JQuery - loading:
+	Load jQuery before the JavaScript file:
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    	<script type = "text/javascript" src="j-cafe.js"></script>
+*******************************************************************************
+(document).ready();
+	Used because the brower reads line by line. So if javascript is loaded in <head>, it won't be able to access any of the elelments in the <body> because they dont' exist yet. 
+*******************************************************************************
+Input Buttons: 
+	<input type="submit" name="submit" class="button" id="submit_btn" value="Order" />  
+	Atrributes:
+		type - The type of control to display. The default type is text, if this attribute is not specified.
+		name - The name of the control, which is submitted with the form data.
+
+*******************************************************************************
+Variable scope: variables defined inside a function cannot be accessed outside of the function.
+	I was having trouble with my totalcost variable because I placed it outside function associated with the on event.
+*******************************************************************************
