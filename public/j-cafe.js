@@ -41,7 +41,11 @@ $(document).ready(function() {
         $('#submit_btn').hide();
         $.post('/shop', cost, function(responseText){
           $('.response').html('<h2>' + responseText + '</h2>')
+        });
+        // Hide form to prevent useres from altering the order after submitting
+        $('form').hide();
+        // Hide message: "What would you like to drink"
+        $('.panel h2').hide();
       });
     });
-  });
 });
