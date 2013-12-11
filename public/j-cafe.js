@@ -1,9 +1,11 @@
 // alert("This is a test");
 
 $(document).ready(function() {
-  // grab the 'select' elements' container,'form' will do nicely
+
+  var drinks=0;
+  // grab the 'select' elements' container,'form' 
   $('form').
-    // `on` lets us specify 3 things:
+    // `on` event lets us specify 3 things:
     // the event we are watching for ('change'),
     // the element we are watching on ('select'), and
     // the function to call when the element changes - an anonymous function, here
@@ -12,7 +14,7 @@ $(document).ready(function() {
       $('form').append('<div>' + newdropdown + '</div>');
 
       //Updating the order qty: 
-      var drinks=0;
+
       drinks+=1;
       $('dd#drinks').text(drinks);
 

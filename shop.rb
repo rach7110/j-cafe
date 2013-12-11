@@ -13,7 +13,7 @@ get '/taxes' do
 end
 
 post '/shop' do
-  'Thanks for your order'
+  'Thanks for your order!'
 end
 
 post '/signups' do
