@@ -4,6 +4,7 @@ $(document).ready(function() {
 
   var drinks=0;
   // grab the 'select' elements' container,'form' 
+  $('#new_btn').hide();
   $('form').
     // `on` event lets us specify 3 things:
     // the event we are watching for ('change'),
@@ -11,7 +12,7 @@ $(document).ready(function() {
     // the function to call when the element changes - an anonymous function, here
     on('change', 'select', function(){
       var newdropdown=$('form').find('div').first().html(); //grabbing the first <div> tag from the <form>. Includes the <select> tag with all its <options> and <optgroup>.  
-      $('form').append('<div>' + newdropdown + '</div>');
+      $('form.drinks').append('<div>' + newdropdown + '</div>');
 
       //Updating the order qty: 
 
@@ -38,14 +39,14 @@ $(document).ready(function() {
       // Adding a 'Submit' button:
       $('.button').click(function(event){
         event.preventDefault(); //cancels default action/event (otherwise, browser jumps to the page before code appears)
-        $('#submit_btn').hide();
         $.post('/shop', cost, function(responseText){
           $('.response').html('<h2>' + responseText + '</h2>')
         });
         // Hide form to prevent useres from altering the order after submitting
-        $('form').hide();
+        $('form.drinks').hide();
         // Hide message: "What would you like to drink"
         $('.panel h2').hide();
+        $('#new_btn').show();
       });
     });
 });

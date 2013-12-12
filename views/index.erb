@@ -9,7 +9,7 @@
   </head>
   <body>
     <div id="headmast">
-      <h1>J-Cafe</h1>
+      <a href= "/"><h1>J-Cafe</h1></a>
       <h2>100 Congress Ave, Austin, TX</p>
     </div>
 
@@ -26,7 +26,7 @@
       <!-- Order form -->
       <div class="panel">
         <h2>What Would You Like to Order?</h2>
-        <form>
+        <form class="drinks">
           <div>
             <!-- See this "drink[]" name? -->
             <!-- This is turned into an array of items -->
@@ -66,6 +66,9 @@
           </dl>
         </form>
         <div class="response"></div>
+        <form class="new" action="/" method="get">
+          <input type="submit" name="Submit" class="button" id="new_btn" value="New Order"/>
+        </form>
       </div>
 
 
