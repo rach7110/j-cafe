@@ -14,13 +14,13 @@ Heroku Deployment - Sinatra app:
 
 *******************************************************************************
 Sinatra - Public Folder:
-	Sinatra expects static files to be placed int he public forlder. ie: somefile.css
+	Sinatra expects static files to be placed in the public forlder. ie: somefile.css
 	This is not intuitive since they are referenced like they are in the top level directory:
 		<!-- suspicious lack of "public/somefile.css" -->
 		<link rel="stylesheet" type="text/css" href="somefile.css" />
 *******************************************************************************
 JQuery - loading:
-	Load jQuery before the JavaScript file:
+	Load jQuery libraries before the JavaScript file:
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     	<script type = "text/javascript" src="j-cafe.js"></script>
 *******************************************************************************
